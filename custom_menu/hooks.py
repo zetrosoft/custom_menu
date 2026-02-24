@@ -1,7 +1,7 @@
 app_name = "custom_menu"
 app_title = "Custom Menu"
-app_publisher = "Bijak Technology (samkarsa.com)"
-app_description = "Custom App merubah tampilan standard"
+app_publisher = "Bijak Technology by samkarsa.com"
+app_description = "Custom App untuk merubah theme standard di website nya"
 app_email = "support@samkarsa.com"
 app_license = "mit"
 

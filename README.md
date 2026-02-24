@@ -1,6 +1,6 @@
 ### Custom Menu
 
-Custom App merubah tampilan standard
+Custom App untuk merubah theme standard di website nya
 
 ### Installation
 

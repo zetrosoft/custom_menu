@@ -1,9 +1,9 @@
 [project]
 name = "custom_menu"
 authors = [
-    { name = "Bijak Technology (samkarsa.com)", email = "support@samkarsa.com"}
+    { name = "Bijak Technology by samkarsa.com", email = "support@samkarsa.com"}
 ]
-description = "Custom App merubah tampilan standard"
+description = "Custom App untuk merubah theme standard di website nya"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
