@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "autoname": "Custom Brand Settings",
+ "creation": "2024-03-02 23:45:00.000000",
+ "docstatus": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "brand_section",
+   "fieldtype": "Section Break",
+   "label": "Branding"
+  },
+  {
+   "fieldname": "brand_text",
+   "fieldtype": "Data",
+   "label": "Brand Text"
+  },
+  {
+   "fieldname": "brand_image",
+   "fieldtype": "Attach Image",
+   "label": "Brand Image"
+  },
+  {
+   "fieldname": "use_image_as_brand",
+   "fieldtype": "Check",
+   "label": "Use Image as Brand"
+  },
+  {
+   "fieldname": "app_icon",
+   "fieldtype": "Attach Image",
+   "label": "App Icon (PWA)"
+  },
+  {
+   "fieldname": "style_section",
+   "fieldtype": "Section Break",
+   "label": "Styles"
+  },
+  {
+   "fieldname": "navbar_color",
+   "fieldtype": "Color",
+   "label": "Navbar Background Color"
+  },
+  {
+   "fieldname": "hide_section",
+   "fieldtype": "Section Break",
+   "label": "Hide Menus"
+  },
+  {
+   "fieldname": "hide_help_menu",
+   "fieldtype": "Check",
+   "label": "Hide Help Menu in Navbar"
+  },
+  {
+   "fieldname": "hide_setup_menu",
+   "fieldtype": "Check",
+   "label": "Hide Setup Menu in Avatar Dropdown"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-03-03 00:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Custom Menu",
+ "name": "Custom Brand Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/custom_menu/css/custom_menu.css"
-# app_include_js = "/assets/custom_menu/js/custom_menu.js"
+app_include_js = "/assets/custom_menu/js/custom_branding.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/custom_menu/css/custom_menu.css"
@@ -57,7 +57,7 @@ app_license = "mit"
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+home_page = "dashboard"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -236,7 +236,9 @@ app_license = "mit"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
+export_python_type_annotations = True
+
+# on_login = "custom_menu.utils.redirect_post_login"
 
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
@@ -246,4 +248,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-

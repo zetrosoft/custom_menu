@@ -1,0 +1,224 @@
+{% extends "templates/web.html" %}
+
+{% block title %}
+{{ _("Dashboard Modul") }}
+{% endblock %}
+
+{% block head %}
+{# Menempatkan Tailwind CSS di head agar layout tidak berantakan di awal render #}
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+    /* Sembunyikan Navbar dan Footer bawaan Frappe secara total */
+    .navbar, .web-footer, .page-breadcrumbs {
+        display: none !important;
+    }
+    .page_content {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+    body {
+        background-color: #f3f4f6;
+    }
+    
+    /* Memastikan dropdown muncul saat hover karena Tailwind CDN terkadang butuh helper ini */
+    .group:hover .group-hover\:block {
+        display: block !important;
+    }
+</style>
+{% endblock %}
+
+{% block page_content %}
+<div class="min-h-screen">
+    {# Custom Header / Navbar #}
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    {# Logo Si Umang #}
+                    <div class="flex items-center space-x-3">
+                        <img src="/files/logo-siumang@0.33x.png" alt="Si Umang Logo" class="h-16 w-auto object-contain">
+                        <div class="h-8 w-px bg-gray-200 hidden md:block"></div>
+                        <span class="text-xl font-bold text-gray-900 tracking-tight hidden md:block">Portal ERP</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="/app" class="text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors bg-blue-50 px-4 py-2 rounded-lg">
+                        Switch to Desk
+                    </a>
+                    
+                    <div class="h-6 w-px bg-gray-200"></div>
+                    
+                    {# Dropdown User #}
+                    <div class="relative group py-4">
+                        <button class="flex items-center space-x-3 focus:outline-none cursor-pointer">
+                            <div class="w-10 h-10 rounded-full bg-indigo-600 border-2 border-white shadow-sm flex items-center justify-center text-white font-bold text-sm">
+                                {{ (full_name or "AD")[:2].upper() }}
+                            </div>
+                            <div class="hidden md:flex flex-col items-start leading-tight">
+                                <span class="text-sm font-bold text-gray-800">{{ full_name }}</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">User Portal</span>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        
+                        {# Dropdown Menu #}
+                        <div class="absolute right-0 top-full w-56 bg-white border border-gray-100 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all duration-200 origin-top-right z-50">
+                            <div class="px-4 py-3 border-b border-gray-50 mb-1">
+                                <p class="text-xs text-gray-400 font-medium uppercase tracking-widest">Signed in as</p>
+                                <p class="text-sm font-semibold text-gray-900 truncate">{{ full_name }}</p>
+                            </div>
+                            <a href="/me" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                My Account
+                            </a>
+                            <div class="border-t border-gray-50 my-1"></div>
+                            <a href="/api/method/logout" class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {# Dashboard Content #}
+    <div class="p-8 md:p-12 lg:p-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-12">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-2">Halo, {{ full_name }}!</h1>
+                <p class="text-xl text-gray-500">Pilih modul untuk mulai bekerja hari ini.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                {# Card 1: Selling #}
+                {% if "Selling" in allowed_modules %}
+                <a href="/app/selling" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-yellow-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-yellow-100 transition-colors">
+                        <span class="text-4xl">💰</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Selling</h3>
+                    <p class="text-gray-500 text-sm">Kelola Penjualan & Pelanggan</p>
+                </a>
+                {% endif %}
+
+                {# Card 2: Buying #}
+                {% if "Buying" in allowed_modules %}
+                <a href="/app/buying" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                        <span class="text-4xl">🛒</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Buying</h3>
+                    <p class="text-gray-500 text-sm">Kelola Pembelian & Pemasok</p>
+                </a>
+                {% endif %}
+
+                {# Card 3: Stock #}
+                {% if "Stock" in allowed_modules %}
+                <a href="/app/stock" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-100 transition-colors">
+                        <span class="text-4xl">📦</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Stock</h3>
+                    <p class="text-gray-500 text-sm">Kelola Persediaan & Gudang</p>
+                </a>
+                {% endif %}
+
+                {# Card 4: Accounting #}
+                {% if "Accounts" in allowed_modules %}
+                <a href="/app/accounting" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-green-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-100 transition-colors">
+                        <span class="text-4xl">🏦</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Accounting</h3>
+                    <p class="text-gray-500 text-sm">Kelola Keuangan & Buku Besar</p>
+                </a>
+                {% endif %}
+
+                {# Card 5: HR #}
+                {% if "HR" in allowed_modules %}
+                <a href="/app/hr" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-100 transition-colors">
+                        <span class="text-4xl">👥</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">HR</h3>
+                    <p class="text-gray-500 text-sm">Kelola Karyawan & Personalia</p>
+                </a>
+                {% endif %}
+
+                {# Card 6: Payroll #}
+                {% if "Payroll" in allowed_modules %}
+                <a href="/app/payroll" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-100 transition-colors">
+                        <span class="text-4xl">🗓️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Payroll</h3>
+                    <p class="text-gray-500 text-sm">Kelola Gaji & Pengupahan</p>
+                </a>
+                {% endif %}
+
+                {# Card 7: Manufacturing #}
+                {% if "Manufacturing" in allowed_modules %}
+                <a href="/app/manufacturing" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-100 transition-colors">
+                        <span class="text-4xl">⚙️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Manufacturing</h3>
+                    <p class="text-gray-500 text-sm">Kelola Produksi & Work Order</p>
+                </a>
+                {% endif %}
+
+                {# Card 8: CRM #}
+                {% if "CRM" in allowed_modules %}
+                <a href="/app/crm" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-100 transition-colors">
+                        <span class="text-4xl">🤝</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">CRM</h3>
+                    <p class="text-gray-500 text-sm">Kelola Prospek & Peluang</p>
+                </a>
+                {% endif %}
+
+                {# Card 9: Assets #}
+                {% if "Assets" in allowed_modules %}
+                <a href="/app/assets" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
+                        <span class="text-4xl">🏢</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Assets</h3>
+                    <p class="text-gray-500 text-sm">Kelola Aktiva Tetap</p>
+                </a>
+                {% endif %}
+
+                {# Card 10: Quality #}
+                {% if "Quality Management" in allowed_modules %}
+                <a href="/app/quality" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
+                        <span class="text-4xl">✅</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Quality</h3>
+                    <p class="text-gray-500 text-sm">Kelola Inspeksi Kualitas</p>
+                </a>
+                {% endif %}
+
+                {# Card 11: Projects #}
+                {% if "Projects" in allowed_modules %}
+                <a href="/app/projects" class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-100 transition-colors">
+                        <span class="text-4xl">🏗️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-1">Projects</h3>
+                    <p class="text-gray-500 text-sm">Kelola Proyek & Tugas</p>
+                </a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
