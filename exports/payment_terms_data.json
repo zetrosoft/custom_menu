@@ -1,0 +1,544 @@
+[
+ {
+  "allocate_payment_based_on_payment_terms": 1,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2025-10-21 14:32:58.069353",
+  "name": "Termin 2x Pembayaran",
+  "template_name": "Termin 2x Pembayaran",
+  "terms": [
+   {
+    "credit_days": 3,
+    "credit_months": 0,
+    "description": "Termin 1 Pembayaran Di Muka ",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 40.0,
+    "mode_of_payment": "Cash",
+    "parent": "Termin 2x Pembayaran",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Termin 1 DP"
+   },
+   {
+    "credit_days": 7,
+    "credit_months": 0,
+    "description": "Pembayaran ke dua setalah Barang dikirim Semua",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 60.0,
+    "mode_of_payment": "Cash",
+    "parent": "Termin 2x Pembayaran",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Termin 2"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2025-10-30 21:41:11.600420",
+  "name": "Termin 3x pembayaran",
+  "template_name": "Termin 3x pembayaran",
+  "terms": [
+   {
+    "credit_days": 3,
+    "credit_months": 0,
+    "description": "Termin 1 Pembayaran Di Muka ",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 40.0,
+    "mode_of_payment": "Cash",
+    "parent": "Termin 3x pembayaran",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Termin 1 DP"
+   },
+   {
+    "credit_days": 7,
+    "credit_months": 0,
+    "description": "Pembayaran ke dua setalah Barang dikirim Semua",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 30.0,
+    "mode_of_payment": "Cash",
+    "parent": "Termin 3x pembayaran",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Termin 2"
+   },
+   {
+    "credit_days": 14,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Month(s) after the end of the invoice month",
+    "invoice_portion": 30.0,
+    "mode_of_payment": null,
+    "parent": "Termin 3x pembayaran",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Termin 3"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 1,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-01-22 16:14:26.496728",
+  "name": "Pembayaran Dimuka",
+  "template_name": "Pembayaran Dimuka",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Pembayaran Dimuka",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "Pembayaran Dimuka"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-02-27 11:44:51.768725",
+  "name": "Term of Payment - 30 Days",
+  "template_name": "Term of Payment - 30 Days",
+  "terms": [
+   {
+    "credit_days": 30,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Term of Payment - 30 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "TOP 30 Days"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-02-27 11:53:09.193601",
+  "name": "Term of Payment - 120 Days",
+  "template_name": "Term of Payment - 120 Days",
+  "terms": [
+   {
+    "credit_days": 120,
+    "credit_months": 0,
+    "description": "Tempo Pembayaran 120 Hari",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Term of Payment - 120 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "TOP 120 Days"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-02-27 11:53:09.207094",
+  "name": "Term of Payment - 90 Days",
+  "template_name": "Term of Payment - 90 Days",
+  "terms": [
+   {
+    "credit_days": 90,
+    "credit_months": 0,
+    "description": "Tempo Pembayaran 90 Hari",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Term of Payment - 90 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "TOP 90 Days"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-02-27 11:53:09.213595",
+  "name": "Term of Payment - 60 Days",
+  "template_name": "Term of Payment - 60 Days",
+  "terms": [
+   {
+    "credit_days": 60,
+    "credit_months": 0,
+    "description": "Tempo Pembayaran 60 Hari",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Term of Payment - 60 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "TOP 60 Days"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-02-27 11:53:09.220862",
+  "name": "Term of Payment - 45 Days",
+  "template_name": "Term of Payment - 45 Days",
+  "terms": [
+   {
+    "credit_days": 45,
+    "credit_months": 0,
+    "description": "Tempo Pembayaran 45 Hari",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Term of Payment - 45 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "TOP 45 Days"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-02-27 11:53:09.234178",
+  "name": "Term of Payment - 14 Days",
+  "template_name": "Term of Payment - 14 Days",
+  "terms": [
+   {
+    "credit_days": 14,
+    "credit_months": 0,
+    "description": "Tempo Pembayaran 14 Hari",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Term of Payment - 14 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "TOP 14 Days"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-02-27 11:53:09.242039",
+  "name": "Term of Payment - 7 Days",
+  "template_name": "Term of Payment - 7 Days",
+  "terms": [
+   {
+    "credit_days": 7,
+    "credit_months": 0,
+    "description": "Tempo Pembayaran 7 Hari",
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": "Bank Transfer",
+    "parent": "Term of Payment - 7 Days",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": "TOP 7 Days"
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 10:19:04.476043",
+  "name": "COD",
+  "template_name": "COD",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "COD",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:24.592201",
+  "name": "net 30",
+  "template_name": "net 30",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "net 30",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:24.686193",
+  "name": "net 7",
+  "template_name": "net 7",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "net 7",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:24.705928",
+  "name": "net 21",
+  "template_name": "net 21",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "net 21",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:25.131262",
+  "name": "net 15",
+  "template_name": "net 15",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "net 15",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:25.355606",
+  "name": "net 60",
+  "template_name": "net 60",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "net 60",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:25.902016",
+  "name": "net 3",
+  "template_name": "net 3",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "net 3",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:29.498333",
+  "name": "net 45",
+  "template_name": "net 45",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "net 45",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ },
+ {
+  "allocate_payment_based_on_payment_terms": 0,
+  "docstatus": 0,
+  "doctype": "Payment Terms Template",
+  "modified": "2026-03-15 14:28:30.109818",
+  "name": "Set Manual",
+  "template_name": "Set Manual",
+  "terms": [
+   {
+    "credit_days": 0,
+    "credit_months": 0,
+    "description": null,
+    "discount": 0.0,
+    "discount_type": "Percentage",
+    "discount_validity": 0,
+    "discount_validity_based_on": "Day(s) after invoice date",
+    "due_date_based_on": "Day(s) after invoice date",
+    "invoice_portion": 100.0,
+    "mode_of_payment": null,
+    "parent": "Set Manual",
+    "parentfield": "terms",
+    "parenttype": "Payment Terms Template",
+    "payment_term": null
+   }
+  ]
+ }
+]

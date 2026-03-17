@@ -34,6 +34,19 @@
                         `;
                     }
 
+                    if (settings.app_icon) {
+                        $('link[rel*="icon"]').attr('href', settings.app_icon);
+                        // CSS minimal untuk splash agar tidak merusak yang lain
+                        custom_style += `
+                            #splash-screen .frappe-logo { 
+                                content: url("${settings.app_icon}") !important;
+                                max-height: 80px !important;
+                                width: auto !important;
+                                margin: 0 auto !important;
+                            }
+                        `;
+                    }
+
                     $('#custom-branding-css').remove();
                     $('<style id="custom-branding-css">').prop("type", "text/css").html(custom_style).appendTo("head");
 
@@ -43,10 +56,6 @@
                     } else if (settings.brand_text) {
                         $('.navbar-brand, .app-logo-text').text(settings.brand_text).css('color', '#fff').show();
                         $('.app-logo img').hide();
-                    }
-
-                    if (settings.app_icon) {
-                        $('link[rel*="icon"]').attr('href', settings.app_icon);
                     }
                 }
             }

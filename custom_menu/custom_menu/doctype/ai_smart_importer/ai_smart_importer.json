@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "autoname": "format:AI-IMP-{YYYY}-{MM}-{DD}-{####}",
+ "creation": "2025-03-10 12:00:00.000000",
+ "docstatus": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "target_doctype",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Target DocType",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "import_file",
+   "fieldtype": "Attach",
+   "label": "Import File",
+   "reqd": 1
+  },
+  {
+   "default": "Update Existing",
+   "fieldname": "import_criteria",
+   "fieldtype": "Select",
+   "label": "Import Criteria",
+   "options": "Update Existing\nReplace All",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_sample",
+   "fieldtype": "Check",
+   "label": "Process Only Sample"
+  },
+  {
+   "default": "20",
+   "depends_on": "is_sample",
+   "fieldname": "sample_size",
+   "fieldtype": "Int",
+   "label": "Sample Size"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nAnalyzing\nAnalyzed\nProcessing\nCompleted\nFailed",
+   "read_only": 1,
+   "default": "Draft"
+  },
+  {
+   "fieldname": "current_progress",
+   "fieldtype": "Int",
+   "label": "Current Progress"
+  },
+  {
+   "fieldname": "total_records",
+   "fieldtype": "Int",
+   "label": "Total Records",
+   "read_only": 1
+  },
+  {
+   "fieldname": "analyze_btn",
+   "fieldtype": "Button",
+   "label": "Analyze with AI"
+  },
+  {
+   "fieldname": "execute_btn",
+   "fieldtype": "Button",
+   "label": "Execute Smart Import",
+   "depends_on": "eval:doc.status == 'Analyzed'"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "mapping_section",
+   "fieldtype": "Section Break",
+   "label": "AI Mapping Preview"
+  },
+  {
+   "fieldname": "mapping_preview",
+   "fieldtype": "HTML",
+   "label": "Mapping Preview"
+  },
+  {
+   "fieldname": "mapping_json",
+   "fieldtype": "Code",
+   "label": "Mapping JSON",
+   "options": "JSON"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "log_section",
+   "fieldtype": "Section Break",
+   "label": "Process Log"
+  },
+  {
+   "fieldname": "results_log",
+   "fieldtype": "Long Text",
+   "label": "Results Log",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2025-03-12 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Custom Menu",
+ "name": "AI Smart Importer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

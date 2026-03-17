@@ -148,23 +148,13 @@ home_page = "dashboard"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"custom_menu.tasks.all"
-# 	],
-# 	"daily": [
-# 		"custom_menu.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"custom_menu.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"custom_menu.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"custom_menu.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"cron": {
+		"*/5 * * * *": [
+			"custom_menu.custom_menu.doctype.ai_smart_importer.ai_smart_importer.auto_resume_broken_jobs"
+		]
+	}
+}
 
 # Testing
 # -------

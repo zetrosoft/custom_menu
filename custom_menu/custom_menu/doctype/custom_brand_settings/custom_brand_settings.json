@@ -59,6 +59,28 @@
    "fieldname": "hide_setup_menu",
    "fieldtype": "Check",
    "label": "Hide Setup Menu in Avatar Dropdown"
+  },
+  {
+   "fieldname": "ai_section",
+   "fieldtype": "Section Break",
+   "label": "AI Settings"
+  },
+  {
+   "fieldname": "gemini_api_key",
+   "fieldtype": "Password",
+   "label": "Gemini API Key"
+  },
+  {
+   "fieldname": "ollama_url",
+   "fieldtype": "Data",
+   "label": "Ollama URL",
+   "default": "http://localhost:11434/api/generate"
+  },
+  {
+   "fieldname": "ollama_model",
+   "fieldtype": "Data",
+   "label": "Ollama Model",
+   "default": "gemma3:4b"
   }
  ],
  "index_web_pages_for_search": 1,
