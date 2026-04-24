@@ -1,0 +1,126 @@
+{
+  "country_code": "id",
+  "allow_manual_rebuild": 1,
+  "tree": {
+    "1-00000 - ASSET": {
+      "1-10000 - Kas dan Setara Kas": {
+        "1-10001 - Bank BCA - 888": {},
+        "1-10002 - Bank BCA - 999": {},
+        "1-10003 - Bank BCA - 777": {},
+        "1-10004 - Bank Mandiri - 2276": {},
+        "1-10005 - OCBC GIRO ASB (Pinjaman)": {},
+        "1-10006 - OCBC GIRO SUTS": {},
+        "1-10007 - Kas Bank Sementara": {},
+        "1-10008 - Kas Kecil": {},
+        "1-10009 - Flazz BCA Traga": {},
+        "1-10010 - Flazz BCA Engkel": {}
+      },
+      "1-20000 - Piutang Usaha": {
+        "1-20001 - Piutang Usaha": {},
+        "1-20002 - Piutang Karyawan": {},
+        "1-20003 - Piutang Direksi": {}
+      },
+      "root_type": "Asset"
+    },
+    "3-00000 - EKUITAS": {
+      "3-00004 - Laba Ditahan": {},
+      "3-00005 - Laba Tahun Ini": {},
+      "root_type": "Equity"
+    },
+    "4-00000 - PENDAPATAN": {
+      "4-10000 - Pendapatan Siumang": {
+        "4-10001 - Penjualan 130 Gram": {},
+        "4-10002 - Penjualan 80 Gram": {},
+        "4-10003 - Penjualan 65 Gram": {},
+        "4-10004 - Penjualan 10 Gram": {},
+        "4-10005 - Penjualan Lain-Lain": {},
+        "4-10006 - Penjualan 100 Gram": {},
+        "4-10007 - Penjualan 16 Gram": {},
+        "4-10008 - Penjualan Mie Lidi Box 16 Gram": {},
+        "4-10009 - Penjualan Kampung Snack": {},
+        "4-10010 - Pendapatan Event": {},
+        "4-10999 - Pendapatan Lainnya": {}
+      },
+      "4-20000 - Pendapatan Adek Budi": {
+        "4-20001 - Penjualan Adek Budi - Sapu Lidi 130gram": {},
+        "4-20002 - Penjualan Adek Budi - Mie Lidi 100gram": {},
+        "4-20003 - Penjualan Adek Budi - Mie Lidi 200gram": {}
+      },
+      "4-30000 - Retur Penjualan": {
+        "4-30001 - Retur Penjualan 130 Gram": {},
+        "4-30002 - Retur Penjualan 80 Gram": {},
+        "4-30003 - Retur Penjualan 65 Gram": {},
+        "4-30004 - Retur Penjualan 10 Gram": {},
+        "4-30005 - Retur Penjualan 16 Gram": {}
+      },
+      "4-40000 - Diskon Penjualan": {
+        "4-40001 - Diskon Penjualan 130 Gram": {},
+        "4-40002 - Diskon Penjualan 65 Gram": {},
+        "4-40003 - Diskon Penjualan 10 Gram": {},
+        "4-40004 - Diskon Penjualan Lain-Lain": {}
+      },
+      "root_type": "Income"
+    },
+    "5-00000 - BEBAN POKOK PENJUALAN": {
+      "5-10000 - Beban Pokok Penjualan": {
+        "5-10001 - Beban Pokok Penjualan": {},
+        "5-10002 - Beban Variabel Lainnya": {},
+        "5-10003 - Beban Upah Produksi": {}
+      },
+      "root_type": "Expense"
+    },
+    "6-00000 - BEBAN": {
+      "6-10000 - Beban Operasional": {
+        "6-10003 - Alat Tulis Kantor": {},
+        "6-10004 - Beban Kebersihan & Keamanan": {},
+        "6-10005 - Seragam": {},
+        "6-10006 - Beban Sewa Kendaraan": {},
+        "6-10007 - Beban Sewa Peralatan": {},
+        "6-10008 - Beban Pengiriman": {},
+        "6-10009 - Beban Bongkar Muat": {},
+        "6-10010 - Beban Bensin, Tol & Parkir": {},
+        "6-10011 - Beban Kantor & Lainnya": {},
+        "6-10012 - Beban Konsumsi": {},
+        "6-10013 - Beban Langanan & Iuran": {},
+        "6-10014 - Beban Accurate": {}
+      },
+      "6-40000 - Beban Marketing dan Promotion": {
+        "6-40005 - Promosi": {},
+        "6-40006 - Listing": {},
+        "6-40007 - Beban Barang Cetakan": {},
+        "6-40008 - Event": {}
+      },
+      "6-80000 - Beban Pajak": {
+        "6-80001 - Beban Pajak PPH 21": {},
+        "6-80002 - Beban Pajak PPH 23": {},
+        "6-80003 - Beban Pajak PPH 4 (2)": {},
+        "6-80004 - Beban Pajak PPH Badan": {},
+        "6-80999 - Beban Pajak Lain-Lain": {}
+      },
+      "6-90001 - Penyusutan": {},
+      "6-90002 - Penyusutan": {},
+      "6-90003 - Penyusutan": {},
+      "6-90004 - Penyusutan": {},
+      "6-99001 - Beban Bunga": {},
+      "6-99002 - Lainnya": {},
+      "root_type": "Expense"
+    },
+    "7-00000 - PENDAPATAN LAIN-LAIN": {
+      "7-10000 - Pendapatan Lain-Lain": {
+        "7-10001 - Pendapatan Bunga Bank": {},
+        "7-10002 - Keuntungan Selisih Kurs": {},
+        "7-10999 - Pendapatan Lain-Lain": {}
+      },
+      "root_type": "Income"
+    },
+    "8-00000 - BIAYA LAIN-LAIN": {
+      "8-10000 - Beban Lain-Lain": {
+        "8-10001 - Beban Administrasi Bank": {},
+        "8-10002 - Kerugian Selisih Kurs": {},
+        "8-10003 - Pajak Bunga Bank": {},
+        "8-10999 - Beban Lain-Lain": {}
+      },
+      "root_type": "Expense"
+    }
+  }
+}
