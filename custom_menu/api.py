@@ -162,18 +162,19 @@ def clear_selected_doctypes(doctypes):
                 total_docs = len(doc_names)
                 for i, name in enumerate(doc_names):
                     try:
-                        # Bypass "cancel first" by setting docstatus to 2 (Cancelled) or 0 (Draft)
-                        frappe.db.set_value(doctype, name, "docstatus", 2, update_modified=False)
+                        # Force update docstatus to 2 (Cancelled) in DB and commit
+                        frappe.db.sql(f"UPDATE `tab{doctype}` SET docstatus = 2 WHERE name = %s", name)
+                        frappe.db.commit()
                         
                         try:
                             frappe.delete_doc(doctype, name, ignore_permissions=True, force=True, delete_permanently=True)
                         except Exception:
-                            # Hard delete via SQL as last resort for stubborn records like BOM
+                            # Hard delete via SQL as last resort
                             frappe.db.sql(f"DELETE FROM `tab{doctype}` WHERE name = %s", name)
-                            # Also clear child tables if any (common in Transactions/BOM)
                             table_meta = frappe.get_meta(doctype)
                             for child in table_meta.get_table_fields():
                                 frappe.db.sql(f"DELETE FROM `tab{child.options}` WHERE parent = %s", name)
+                            frappe.db.commit()
                                 
                         count += 1
                         
