@@ -165,7 +165,16 @@ def clear_selected_doctypes(doctypes):
                         # Bypass "cancel first" by setting docstatus to 2 (Cancelled) or 0 (Draft)
                         frappe.db.set_value(doctype, name, "docstatus", 2, update_modified=False)
                         
-                        frappe.delete_doc(doctype, name, ignore_permissions=True, force=True, delete_permanently=True)
+                        try:
+                            frappe.delete_doc(doctype, name, ignore_permissions=True, force=True, delete_permanently=True)
+                        except Exception:
+                            # Hard delete via SQL as last resort for stubborn records like BOM
+                            frappe.db.sql(f"DELETE FROM `tab{doctype}` WHERE name = %s", name)
+                            # Also clear child tables if any (common in Transactions/BOM)
+                            table_meta = frappe.get_meta(doctype)
+                            for child in table_meta.get_table_fields():
+                                frappe.db.sql(f"DELETE FROM `tab{child.options}` WHERE parent = %s", name)
+                                
                         count += 1
                         
                         # Kirim progres penghapusan setiap 10 records
