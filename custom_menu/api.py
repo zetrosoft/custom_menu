@@ -162,6 +162,9 @@ def clear_selected_doctypes(doctypes):
                 total_docs = len(doc_names)
                 for i, name in enumerate(doc_names):
                     try:
+                        # Bypass "cancel first" by setting docstatus to 2 (Cancelled) or 0 (Draft)
+                        frappe.db.set_value(doctype, name, "docstatus", 2, update_modified=False)
+                        
                         frappe.delete_doc(doctype, name, ignore_permissions=True, force=True, delete_permanently=True)
                         count += 1
                         
