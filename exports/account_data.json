@@ -3,31 +3,51 @@
   "name": "Asset",
   "is_group": 1,
   "root_type": "Asset",
-  "parent_account": ""
+  "parent_account": "",
+  "account_name": "Asset",
+  "company": "PT. SIUMANG TEMAN SUKSES",
+  "report_type": "Balance Sheet",
+  "account_currency": "IDR"
  },
  {
   "name": "Liability",
   "is_group": 1,
   "root_type": "Liability",
-  "parent_account": ""
+  "parent_account": "",
+  "account_name": "Liability",
+  "company": "PT. SIUMANG TEMAN SUKSES",
+  "report_type": "Balance Sheet",
+  "account_currency": "IDR"
  },
  {
   "name": "Equity",
   "is_group": 1,
   "root_type": "Equity",
-  "parent_account": ""
+  "parent_account": "",
+  "account_name": "Equity",
+  "company": "PT. SIUMANG TEMAN SUKSES",
+  "report_type": "Balance Sheet",
+  "account_currency": "IDR"
  },
  {
   "name": "Income",
   "is_group": 1,
   "root_type": "Income",
-  "parent_account": ""
+  "parent_account": "",
+  "account_name": "Income",
+  "company": "PT. SIUMANG TEMAN SUKSES",
+  "report_type": "Profit and Loss",
+  "account_currency": "IDR"
  },
  {
   "name": "Expense",
   "is_group": 1,
   "root_type": "Expense",
-  "parent_account": ""
+  "parent_account": "",
+  "account_name": "Expense",
+  "company": "PT. SIUMANG TEMAN SUKSES",
+  "report_type": "Profit and Loss",
+  "account_currency": "IDR"
  },
  {
   "name": "4-00000 - PENDAPATAN - SIUMANG",
