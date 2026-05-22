@@ -1,6 +1,6 @@
 (function() {
     function apply_custom_branding() {
-        if (typeof frappe === 'undefined' || !frappe.call) return;
+        if (typeof $ === 'undefined' || typeof frappe === 'undefined' || !frappe.call) return;
 
         frappe.call({
             method: "frappe.client.get_value",
@@ -92,19 +92,21 @@
         });
     }
 
-    $(document).ready(function() {
-        // Delay sedikit agar Frappe init selesai
-        setTimeout(apply_custom_branding, 300); 
-        
-        // Logout override
-        $(document).on('click', '.dropdown-item:contains("Logout")', function(e) {
-            e.preventDefault();
-            window.location.href = '/api/method/logout';
+    if (typeof $ !== 'undefined') {
+        $(document).on('app_ready', function() {
+            // Delay sedikit agar Frappe init selesai
+            setTimeout(apply_custom_branding, 300); 
+            
+            // Logout override
+            $(document).on('click', '.dropdown-item:contains("Logout")', function(e) {
+                e.preventDefault();
+                window.location.href = '/api/method/logout';
+            });
         });
-    });
 
-    // Re-apply on page change for Single Page App (SPA) feel
-    $(document).on('page-change', function() {
-        setTimeout(apply_custom_branding, 100);
-    });
+        // Re-apply on page change for Single Page App (SPA) feel
+        $(document).on('page-change', function() {
+            setTimeout(apply_custom_branding, 100);
+        });
+    }
 })();
