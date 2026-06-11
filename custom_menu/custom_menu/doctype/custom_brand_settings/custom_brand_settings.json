@@ -66,6 +66,12 @@
    "label": "AI Settings"
   },
   {
+   "default": "1",
+   "fieldname": "calculate_tax_automatically",
+   "fieldtype": "Check",
+   "label": "Calculate PPh 21 (Tax) Automatically"
+  },
+  {
    "fieldname": "gemini_api_key",
    "fieldtype": "Password",
    "label": "Gemini API Key"
